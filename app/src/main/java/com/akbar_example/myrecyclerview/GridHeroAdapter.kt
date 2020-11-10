@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.item_grid_hero.view.*
 class GridHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adapter
 <GridHeroAdapter.GridViewHolder>()  {
 
-    private var onItemClickCallback: ListHeroAdapter.OnItemClickCallback? = null
+    private var onItemClickCallback: GridHeroAdapter.OnItemClickCallback? = null
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
@@ -45,7 +45,7 @@ class GridHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adap
         }
     }
 
-    interface OnItemClickCallback : ListHeroAdapter.OnItemClickCallback {
-        override fun onItemClicked(data: Hero)
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Hero)
     }
 }
